@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: taller-backend
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/taller_mecanico?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: 8080
+  tomcat:
+    max-http-form-post-size: 10MB
+
+logging:
+  level:
+    com.taller.backend: DEBUG
+    org.springframework.security: DEBUG
+
+jwt:
+  secret: 7a8f2c1d9e4b6f3a0c5d8e2f1b4a7c9d2e5f8a1b4c7d0e3f6a9b2c5d8e1f4a7b
+  expiration: 86400000

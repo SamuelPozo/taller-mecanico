@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.taller.tallerdesktop.controller.MecanicosController"
+      spacing="16" style="-fx-background-color: transparent;">
+
+    <!-- HEADER -->
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <Label text="Gestión de Mecánicos"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #EAEAEA;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="searchField"
+                   promptText="🔍  Buscar mecánico..."
+                   prefWidth="280"
+                   styleClass="login-field"/>
+        <Button text="+ Nuevo Mecánico"
+                styleClass="btn-primary"
+                prefWidth="160"
+                onAction="#handleNuevoMecanico"/>
+    </HBox>
+
+    <!-- TABLA -->
+    <VBox styleClass="card" spacing="12" VBox.vgrow="ALWAYS">
+        <TableView fx:id="mecanicosTable" styleClass="table-view" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="55"/>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="180"/>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
+                <TableColumn fx:id="colEspecialidad" text="Especialidad" prefWidth="150"/>
+                <TableColumn fx:id="colTurno" text="Turno" prefWidth="100"/>
+                <TableColumn fx:id="colNumEmpleado" text="Nº Empleado" prefWidth="110"/>
+                <TableColumn fx:id="colOrdenes" text="Órdenes Activas" prefWidth="120"/>
+                <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="160"/>
+            </columns>
+            <placeholder>
+                <Label text="No hay mecánicos registrados."
+                       style="-fx-text-fill: #A0A0B0;"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+
+</VBox>

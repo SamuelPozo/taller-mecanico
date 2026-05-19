@@ -1,0 +1,22 @@
+# Maven
+target/
+*.class
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# JavaFX
+*.jar
+
+# Logs
+*.log
+
+# Node
+node_modules/
+
+# Sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.taller.tallerdesktop.controller.HomeController"
+            fitToWidth="true"
+            style="-fx-background-color: transparent; -fx-background: transparent;">
+
+    <VBox spacing="24" style="-fx-background-color: transparent;">
+
+        <!-- TARJETAS DE RESUMEN -->
+        <GridPane hgap="16" vgap="16">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="25"/>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="25"/>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="25"/>
+                <ColumnConstraints hgrow="ALWAYS" percentWidth="25"/>
+            </columnConstraints>
+
+            <!-- Card Vehículos en taller -->
+            <VBox styleClass="card, card-accent-blue" spacing="8"
+                  GridPane.columnIndex="0">
+                <Label text="VEHÍCULOS EN TALLER" styleClass="card-title"/>
+                <Label fx:id="totalVehiculos" text="—" styleClass="card-value"/>
+                <Label text="Actualmente en taller" style="-fx-text-fill: #A0A0B0; -fx-font-size: 11px;"/>
+            </VBox>
+
+            <!-- Card Órdenes pendientes -->
+            <VBox styleClass="card, card-accent-orange" spacing="8"
+                  GridPane.columnIndex="1">
+                <Label text="ÓRDENES PENDIENTES" styleClass="card-title"/>
+                <Label fx:id="ordenesPendientes" text="—" styleClass="card-value"/>
+                <Label text="Sin asignar o en espera" style="-fx-text-fill: #A0A0B0; -fx-font-size: 11px;"/>
+            </VBox>
+
+            <!-- Card En proceso -->
+            <VBox styleClass="card, card-accent-red" spacing="8"
+                  GridPane.columnIndex="2">
+                <Label text="EN PROCESO" styleClass="card-title"/>
+                <Label fx:id="ordenesEnProceso" text="—" styleClass="card-value"/>
+                <Label text="Trabajos en curso" style="-fx-text-fill: #A0A0B0; -fx-font-size: 11px;"/>
+            </VBox>
+
+            <!-- Card Listos para entregar -->
+            <VBox styleClass="card, card-accent-green" spacing="8"
+                  GridPane.columnIndex="3">
+                <Label text="LISTOS PARA ENTREGAR" styleClass="card-title"/>
+                <Label fx:id="ordenesListas" text="—" styleClass="card-value"/>
+                <Label text="Pendientes de entrega" style="-fx-text-fill: #A0A0B0; -fx-font-size: 11px;"/>
+            </VBox>
+        </GridPane>
+
+        <!-- TABLA ÓRDENES RECIENTES -->
+        <VBox styleClass="card" spacing="16">
+            <Label text="ÓRDENES DE TRABAJO RECIENTES"
+                   styleClass="card-title"/>
+            <TableView fx:id="ordenesTable" styleClass="table-view"
+                       prefHeight="350">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colVehiculo" text="Vehículo" prefWidth="150"/>
+                    <TableColumn fx:id="colCliente" text="Cliente" prefWidth="180"/>
+                    <TableColumn fx:id="colMecanico" text="Mecánico" prefWidth="180"/>
+                    <TableColumn fx:id="colEstado" text="Estado" prefWidth="130"/>
+                    <TableColumn fx:id="colFecha" text="Fecha Entrada" prefWidth="140"/>
+                </columns>
+                <placeholder>
+                    <Label text="No hay órdenes de trabajo registradas."
+                           style="-fx-text-fill: #A0A0B0;"/>
+                </placeholder>
+            </TableView>
+        </VBox>
+
+        <!-- PLAZAS DEL TALLER -->
+        <VBox styleClass="card" spacing="16">
+            <Label text="ESTADO DE PLAZAS" styleClass="card-title"/>
+            <FlowPane fx:id="plazasContainer" hgap="12" vgap="12"/>
+        </VBox>
+
+        <!-- NOTIFICACIONES RECIENTES -->
+        <VBox styleClass="card" spacing="16">
+            <Label text="NOTIFICACIONES RECIENTES" styleClass="card-title"/>
+            <VBox fx:id="notificacionesContainer" spacing="8">
+                <Label text="Cargando notificaciones..."
+                       style="-fx-text-fill: #A0A0B0; -fx-font-size: 12px;"/>
+            </VBox>
+        </VBox>
+
+    </VBox>
+</ScrollPane>

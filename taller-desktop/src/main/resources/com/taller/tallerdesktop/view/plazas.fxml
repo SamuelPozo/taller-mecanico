@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.taller.tallerdesktop.controller.PlazasController"
+      spacing="16" style="-fx-background-color: transparent;">
+
+    <!-- HEADER -->
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <Label text="Gestión de Plazas"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #EAEAEA;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="+ Nueva Plaza"
+                styleClass="btn-primary"
+                prefWidth="140"
+                onAction="#handleNuevePlaza"/>
+    </HBox>
+
+    <!-- LEYENDA -->
+    <HBox spacing="16" alignment="CENTER_LEFT">
+        <Label text="Leyenda:" style="-fx-text-fill: #A0A0B0; -fx-font-size: 12px;"/>
+        <HBox spacing="6" alignment="CENTER_LEFT">
+            <Label style="-fx-background-color: #2ECC71; -fx-background-radius: 4; -fx-min-width: 16; -fx-min-height: 16;"/>
+            <Label text="Libre" style="-fx-text-fill: #EAEAEA; -fx-font-size: 12px;"/>
+        </HBox>
+        <HBox spacing="6" alignment="CENTER_LEFT">
+            <Label style="-fx-background-color: #E94560; -fx-background-radius: 4; -fx-min-width: 16; -fx-min-height: 16;"/>
+            <Label text="Ocupada" style="-fx-text-fill: #EAEAEA; -fx-font-size: 12px;"/>
+        </HBox>
+        <HBox spacing="6" alignment="CENTER_LEFT">
+            <Label style="-fx-background-color: #F39C12; -fx-background-radius: 4; -fx-min-width: 16; -fx-min-height: 16;"/>
+            <Label text="Reservada" style="-fx-text-fill: #EAEAEA; -fx-font-size: 12px;"/>
+        </HBox>
+        <HBox spacing="6" alignment="CENTER_LEFT">
+            <Label style="-fx-background-color: #95A5A6; -fx-background-radius: 4; -fx-min-width: 16; -fx-min-height: 16;"/>
+            <Label text="Mantenimiento" style="-fx-text-fill: #EAEAEA; -fx-font-size: 12px;"/>
+        </HBox>
+    </HBox>
+
+    <!-- MAPA DE PLAZAS -->
+    <VBox styleClass="card" spacing="16" VBox.vgrow="ALWAYS">
+        <Label text="MAPA DEL TALLER" styleClass="card-title"/>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;">
+            <FlowPane fx:id="plazasContainer" hgap="16" vgap="16" style="-fx-padding: 8;"/>
+        </ScrollPane>
+    </VBox>
+
+    <!-- TABLA DE PLAZAS -->
+    <VBox styleClass="card" spacing="12">
+        <Label text="LISTADO DE PLAZAS" styleClass="card-title"/>
+        <TableView fx:id="plazasTable" styleClass="table-view" prefHeight="250">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                <TableColumn fx:id="colNumero" text="Número" prefWidth="100"/>
+                <TableColumn fx:id="colDescripcion" text="Descripción" prefWidth="300"/>
+                <TableColumn fx:id="colEstado" text="Estado" prefWidth="130"/>
+                <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="150"/>
+            </columns>
+            <placeholder>
+                <Label text="No hay plazas registradas." style="-fx-text-fill: #A0A0B0;"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+
+</VBox>

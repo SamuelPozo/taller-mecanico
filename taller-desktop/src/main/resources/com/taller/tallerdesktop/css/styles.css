@@ -1,0 +1,320 @@
+/* ============================================================
+   TALLER MECÁNICO - ESTILOS GLOBALES
+   ============================================================ */
+
+/* Variables de color */
+* {
+    -fx-primary: #1A1A2E;
+    -fx-primary-light: #16213E;
+    -fx-accent: #0F3460;
+    -fx-accent-hover: #E94560;
+    -fx-text-light: #EAEAEA;
+    -fx-text-muted: #A0A0B0;
+    -fx-success: #2ECC71;
+    -fx-warning: #F39C12;
+    -fx-danger: #E74C3C;
+    -fx-card-bg: #1E1E3A;
+    -fx-border-color: #2A2A4A;
+}
+
+/* ============================================================
+   ROOT Y FONDO GENERAL
+   ============================================================ */
+.root {
+    -fx-background-color: #1A1A2E;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* ============================================================
+   LOGIN
+   ============================================================ */
+.login-container {
+    -fx-background-color: #1A1A2E;
+}
+
+.login-card {
+    -fx-background-color: #1E1E3A;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 30, 0, 0, 8);
+    -fx-padding: 50 60 50 60;
+}
+
+.login-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #EAEAEA;
+    -fx-padding: 0 0 6 0;
+}
+
+.login-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #A0A0B0;
+    -fx-padding: 0 0 30 0;
+}
+
+.login-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #A0A0B0;
+    -fx-padding: 0 0 4 0;
+}
+
+.login-field {
+    -fx-background-color: #252545;
+    -fx-background-radius: 8;
+    -fx-border-color: #2A2A4A;
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #EAEAEA;
+    -fx-prompt-text-fill: #555575;
+    -fx-padding: 12 16 12 16;
+    -fx-font-size: 13px;
+    -fx-pref-height: 44px;
+}
+
+.login-field:focused {
+    -fx-border-color: #E94560;
+    -fx-effect: dropshadow(gaussian, rgba(233,69,96,0.3), 8, 0, 0, 0);
+}
+
+.btn-primary {
+    -fx-background-color: #E94560;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 46px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(233,69,96,0.4), 12, 0, 0, 4);
+}
+
+.btn-primary:hover {
+    -fx-background-color: #c73652;
+    -fx-effect: dropshadow(gaussian, rgba(233,69,96,0.6), 16, 0, 0, 6);
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #a82d45;
+    -fx-effect: none;
+}
+
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-border-color: #2A2A4A;
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #EAEAEA;
+    -fx-font-size: 13px;
+    -fx-pref-height: 40px;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-border-color: #E94560;
+    -fx-text-fill: #E94560;
+}
+
+.error-label {
+    -fx-text-fill: #E94560;
+    -fx-font-size: 12px;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+.sidebar {
+    -fx-background-color: #16213E;
+    -fx-pref-width: 240px;
+    -fx-min-width: 240px;
+}
+
+.sidebar-header {
+    -fx-background-color: #0F3460;
+    -fx-padding: 24 20 24 20;
+}
+
+.sidebar-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #EAEAEA;
+}
+
+.sidebar-subtitle {
+    -fx-font-size: 11px;
+    -fx-text-fill: #A0A0B0;
+}
+
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #A0A0B0;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER-LEFT;
+    -fx-pref-width: 240px;
+    -fx-pref-height: 48px;
+    -fx-padding: 0 0 0 24;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+    -fx-graphic-text-gap: 12;
+}
+
+.sidebar-btn:hover {
+    -fx-background-color: #1A2A50;
+    -fx-text-fill: #EAEAEA;
+}
+
+.sidebar-btn-active {
+    -fx-background-color: #E94560;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.sidebar-btn-active:hover {
+    -fx-background-color: #c73652;
+}
+
+/* ============================================================
+   TOPBAR
+   ============================================================ */
+.topbar {
+    -fx-background-color: #1E1E3A;
+    -fx-pref-height: 64px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
+    -fx-padding: 0 24 0 24;
+}
+
+.topbar-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #EAEAEA;
+}
+
+.topbar-user {
+    -fx-font-size: 13px;
+    -fx-text-fill: #A0A0B0;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+    -fx-background-color: #1E1E3A;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 12, 0, 0, 4);
+    -fx-padding: 20;
+}
+
+.card-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #A0A0B0;
+    -fx-text-transform: uppercase;
+}
+
+.card-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #EAEAEA;
+}
+
+.card-accent-red { -fx-border-color: #E94560; -fx-border-width: 0 0 0 4; -fx-border-radius: 0 12 12 0; }
+.card-accent-blue { -fx-border-color: #0F3460; -fx-border-width: 0 0 0 4; -fx-border-radius: 0 12 12 0; }
+.card-accent-green { -fx-border-color: #2ECC71; -fx-border-width: 0 0 0 4; -fx-border-radius: 0 12 12 0; }
+.card-accent-orange { -fx-border-color: #F39C12; -fx-border-width: 0 0 0 4; -fx-border-radius: 0 12 12 0; }
+
+/* ============================================================
+   TABLA
+   ============================================================ */
+.table-view {
+    -fx-background-color: #1E1E3A;
+    -fx-border-color: #2A2A4A;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #1A1A2E;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 12 16 12 16;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #1E1E3A;
+    -fx-border-color: transparent transparent #2A2A4A transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-text-fill: #EAEAEA;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #222240;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #0F3460;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #252550;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #EAEAEA;
+    -fx-padding: 10 16 10 16;
+    -fx-font-size: 13px;
+}
+
+/* ============================================================
+   BADGES DE ESTADO
+   ============================================================ */
+.badge {
+    -fx-background-radius: 20;
+    -fx-padding: 4 12 4 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.badge-pendiente { -fx-background-color: #F39C12; -fx-text-fill: white; }
+.badge-en-proceso { -fx-background-color: #3498DB; -fx-text-fill: white; }
+.badge-diagnosticado { -fx-background-color: #9B59B6; -fx-text-fill: white; }
+.badge-reparado { -fx-background-color: #1ABC9C; -fx-text-fill: white; }
+.badge-listo { -fx-background-color: #2ECC71; -fx-text-fill: white; }
+.badge-entregado { -fx-background-color: #555575; -fx-text-fill: white; }
+
+/* ============================================================
+   SCROLL BAR
+   ============================================================ */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #2A2A4A;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #E94560;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}

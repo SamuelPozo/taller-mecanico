@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.taller.tallerdesktop.controller.LoginController"
+           styleClass="login-container">
+
+    <BorderPane>
+        <center>
+            <VBox styleClass="login-card" alignment="CENTER" spacing="0"
+                  maxWidth="420">
+
+                <!-- Logo / Icono -->
+                <Label text="🔧" style="-fx-font-size: 48px; -fx-padding: 0 0 10 0;"/>
+
+                <!-- Título -->
+                <Label text="Taller Mecánico" styleClass="login-title"/>
+                <Label text="Panel de Administración" styleClass="login-subtitle"/>
+
+                <VBox spacing="8" style="-fx-padding: 20 0 0 0;">
+                    <!-- Email -->
+                    <Label text="CORREO ELECTRÓNICO" styleClass="login-label"/>
+                    <TextField fx:id="emailField"
+                               promptText="admin@taller.com"
+                               styleClass="login-field"/>
+
+                    <!-- Password -->
+                    <VBox spacing="4" style="-fx-padding: 16 0 0 0;">
+                        <Label text="CONTRASEÑA" styleClass="login-label"/>
+                        <HBox fx:id="passwordBox" spacing="8" alignment="CENTER_LEFT">
+                            <PasswordField fx:id="passwordField"
+                                           promptText="••••••••"
+                                           styleClass="login-field"
+                                           HBox.hgrow="ALWAYS"/>
+                            <Button fx:id="btnMostrarPassword"
+                                    text="👁️"
+                                    onAction="#handleTogglePassword"
+                                    style="-fx-background-color: #252545; -fx-text-fill: white; -fx-border-color: #2A2A4A; -fx-border-radius: 6; -fx-background-radius: 6; -fx-cursor: hand; -fx-padding: 8 10 8 10; -fx-font-size: 14px;"/>
+                        </HBox>
+                    </VBox>
+
+                    <!-- Error -->
+                    <Label fx:id="errorLabel"
+                           styleClass="error-label"
+                           style="-fx-padding: 8 0 0 0;"
+                           text=""
+                           wrapText="true"/>
+
+                    <!-- Botón login -->
+                    <Button fx:id="loginButton"
+                            text="INICIAR SESIÓN"
+                            styleClass="btn-primary"
+                            maxWidth="Infinity"
+                            style="-fx-padding: 14 0 14 0;"
+                            onAction="#handleLogin"/>
+
+                    <VBox.margin>
+                        <Insets top="20"/>
+                    </VBox.margin>
+                </VBox>
+
+            </VBox>
+        </center>
+    </BorderPane>
+
+</StackPane>

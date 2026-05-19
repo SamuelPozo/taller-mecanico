@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.taller.tallerdesktop.controller.DashboardController">
+
+    <!-- SIDEBAR -->
+    <left>
+        <VBox styleClass="sidebar" spacing="0">
+
+            <!-- Header del sidebar -->
+            <VBox styleClass="sidebar-header" spacing="4">
+                <Label text="🔧 TallerMec" styleClass="sidebar-title"/>
+                <Label text="Panel de Administración" styleClass="sidebar-subtitle"/>
+            </VBox>
+
+            <!-- Menú -->
+            <VBox spacing="0" style="-fx-padding: 12 0 12 0;">
+                <Button fx:id="btnDashboard" text="📊  Dashboard"
+                        styleClass="sidebar-btn, sidebar-btn-active"
+                        onAction="#showDashboard"/>
+                <Button fx:id="btnVehiculos" text="🚗  Vehículos"
+                        styleClass="sidebar-btn"
+                        onAction="#showVehiculos"/>
+                <Button fx:id="btnOrdenes" text="📋  Órdenes de Trabajo"
+                        styleClass="sidebar-btn"
+                        onAction="#showOrdenes"/>
+                <Button fx:id="btnPlazas" text="🅿️  Plazas"
+                        styleClass="sidebar-btn"
+                        onAction="#showPlazas"/>
+                <Button fx:id="btnMecanicos" text="👨‍🔧  Mecánicos"
+                        styleClass="sidebar-btn"
+                        onAction="#showMecanicos"/>
+                <Button fx:id="btnClientes" text="👥  Clientes"
+                        styleClass="sidebar-btn"
+                        onAction="#showClientes"/>
+                <Button fx:id="btnHorarios" text="📅  Horarios"
+                        styleClass="sidebar-btn"
+                        onAction="#showHorarios"/>
+                <Button fx:id="btnAusencias" text="🏖️  Ausencias"
+                        styleClass="sidebar-btn"
+                        onAction="#showAusencias"/>
+            </VBox>
+
+            <!-- Spacer -->
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- Logout -->
+            <VBox style="-fx-padding: 12 0 24 0;">
+                <Separator style="-fx-background-color: #2A2A4A;"/>
+                <Button text="⬅️  Cerrar Sesión"
+                        styleClass="sidebar-btn"
+                        onAction="#handleLogout"
+                        style="-fx-padding: 12 0 0 0;"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <center>
+        <VBox>
+            <!-- TITLEBAR PERSONALIZADA -->
+            <HBox fx:id="titleBar"
+                  alignment="CENTER_LEFT"
+                  style="-fx-background-color: #0F3460; -fx-padding: 0 12 0 16; -fx-pref-height: 36; -fx-min-height: 36;">
+                <Label text="🔧 Sistema de Gestión de Taller Mecánico"
+                       style="-fx-text-fill: #A0A0B0; -fx-font-size: 12px; -fx-font-family: 'Segoe UI';"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <!-- Botón minimizar -->
+                <Button fx:id="btnMinimizar" text="—"
+                        onAction="#handleMinimizar"
+                        style="-fx-background-color: transparent; -fx-text-fill: #A0A0B0; -fx-font-size: 14px; -fx-cursor: hand; -fx-pref-width: 46; -fx-pref-height: 36; -fx-background-radius: 0; -fx-border-width: 0;"/>
+                <!-- Botón maximizar -->
+                <Button fx:id="btnMaximizar" text="🗖"
+                        onAction="#handleMaximizar"
+                        style="-fx-background-color: transparent; -fx-text-fill: #A0A0B0; -fx-font-size: 12px; -fx-cursor: hand; -fx-pref-width: 46; -fx-pref-height: 36; -fx-background-radius: 0; -fx-border-width: 0;"/>
+                <!-- Botón cerrar -->
+                <Button fx:id="btnCerrar" text="✕"
+                        onAction="#handleCerrarVentana"
+                        style="-fx-background-color: transparent; -fx-text-fill: #A0A0B0; -fx-font-size: 14px; -fx-cursor: hand; -fx-pref-width: 46; -fx-pref-height: 36; -fx-background-radius: 0; -fx-border-width: 0;"/>
+            </HBox>
+
+            <!-- TOPBAR -->
+            <HBox styleClass="topbar" alignment="CENTER_LEFT" spacing="0">
+                <Label fx:id="topbarTitle" text="Dashboard" styleClass="topbar-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <VBox alignment="CENTER_RIGHT">
+                    <Label fx:id="topbarUser" text="" styleClass="topbar-user"/>
+                    <Label text="Administrador" style="-fx-font-size: 11px; -fx-text-fill: #E94560;"/>
+                </VBox>
+            </HBox>
+
+            <!-- CONTENIDO DINÁMICO -->
+            <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS"
+                       style="-fx-padding: 24; -fx-background-color: #1A1A2E;">
+            </StackPane>
+        </VBox>
+    </center>
+
+</BorderPane>

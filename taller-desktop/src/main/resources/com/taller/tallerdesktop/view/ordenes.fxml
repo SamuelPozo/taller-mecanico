@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.taller.tallerdesktop.controller.OrdenesController"
+      spacing="16" style="-fx-background-color: transparent;">
+
+    <!-- HEADER -->
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <Label text="Órdenes de Trabajo"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #EAEAEA;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="filtroEstado" promptText="Filtrar por estado" prefWidth="180"/>
+        <TextField fx:id="searchField"
+                   promptText="🔍  Buscar..."
+                   prefWidth="250"
+                   styleClass="login-field"/>
+        <Button text="+ Nueva Orden"
+                styleClass="btn-primary"
+                prefWidth="140"
+                onAction="#handleNuevaOrden"/>
+    </HBox>
+
+    <!-- TABLA -->
+    <VBox styleClass="card" spacing="12" VBox.vgrow="ALWAYS">
+        <TableView fx:id="ordenesTable" styleClass="table-view" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="55"/>
+                <TableColumn fx:id="colVehiculo" text="Vehículo" prefWidth="160"/>
+                <TableColumn fx:id="colCliente" text="Cliente" prefWidth="160"/>
+                <TableColumn fx:id="colMecanico" text="Mecánico" prefWidth="160"/>
+                <TableColumn fx:id="colEstado" text="Estado" prefWidth="130"/>
+                <TableColumn fx:id="colPrecio" text="Precio Est." prefWidth="100"/>
+                <TableColumn fx:id="colFecha" text="Fecha Entrada" prefWidth="130"/>
+                <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="180"/>
+            </columns>
+            <placeholder>
+                <Label text="No hay órdenes de trabajo registradas."
+                       style="-fx-text-fill: #A0A0B0;"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+
+</VBox>

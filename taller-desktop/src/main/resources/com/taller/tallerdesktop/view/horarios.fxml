@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.taller.tallerdesktop.controller.HorariosController"
+      spacing="16" style="-fx-background-color: transparent;">
+
+    <!-- HEADER -->
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <Label text="Gestión de Horarios"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #EAEAEA;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="filtroMecanico" promptText="Filtrar por mecánico" prefWidth="220"/>
+        <Button text="+ Añadir Horario"
+                styleClass="btn-primary"
+                prefWidth="150"
+                onAction="#handleNuevoHorario"/>
+    </HBox>
+
+    <!-- TABLA -->
+    <VBox styleClass="card" spacing="12" VBox.vgrow="ALWAYS">
+        <TableView fx:id="horariosTable" styleClass="table-view" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="55"/>
+                <TableColumn fx:id="colMecanico" text="Mecánico" prefWidth="200"/>
+                <TableColumn fx:id="colDia" text="Día" prefWidth="130"/>
+                <TableColumn fx:id="colEntrada" text="Hora Entrada" prefWidth="130"/>
+                <TableColumn fx:id="colSalida" text="Hora Salida" prefWidth="130"/>
+                <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="120"/>
+            </columns>
+            <placeholder>
+                <Label text="No hay horarios registrados."
+                       style="-fx-text-fill: #A0A0B0;"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+
+</VBox>
